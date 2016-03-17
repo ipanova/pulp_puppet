@@ -173,7 +173,7 @@ class PuppetModuleInstallDistributor(Distributor):
             _LOGGER.info(_('removing installed modules from environment at %(directory)s' %
                            {'directory': destination}))
             try:
-                shutil.rmtree(destination)
+                shutil.rmtree(destination, ignore_errors=True)
             except Exception, e:
                 _LOGGER.error(_('error removing environment: %(e)s' % {'e': e}))
                 raise

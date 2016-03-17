@@ -590,7 +590,7 @@ class TestDistributorRemoved(unittest.TestCase):
     def test_calls_rmtree(self, mock_rmtree):
         self.distributor.distributor_removed(self.repo, self.config)
 
-        mock_rmtree.assert_called_once_with(self.path)
+        mock_rmtree.assert_called_once_with(self.path, ignore_errors=True)
 
     @mock.patch.object(installdistributor._LOGGER, 'error', spec_set=True)
     @mock.patch('shutil.rmtree', spec_set=True, side_effect=TestException)
