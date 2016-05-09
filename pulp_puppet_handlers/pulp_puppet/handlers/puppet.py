@@ -156,7 +156,7 @@ class ModuleHandler(handler.ContentHandler):
 
         # need this so we can easily access original unit objects when constructing
         # new requests below
-        units_by_full_name = dict(('%s/%s'% (u['author'], u['name']), u) for u in units)
+        units_by_full_name = dict(('%s'% (u['name']), u) for u in units)
 
         # loop over the results, and keep trying to uninstall failed attempts as
         # a dumb but effective way of dealing with dependency-related failures.
@@ -235,7 +235,7 @@ class ModuleHandler(handler.ContentHandler):
 
         for unit in units:
             # prepare the command
-            full_name = '%s/%s' % (unit['author'], unit['name'])
+            full_name = unit['name']
             args = ['puppet', 'module', operation, '--render-as', 'json']
             if forge_url:
                 args.extend(['--module_repository', forge_url])

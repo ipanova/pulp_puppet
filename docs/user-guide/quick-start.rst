@@ -168,7 +168,7 @@ List Modules in a Repository
 ::
 
   $ pulp-admin puppet repo modules --repo-id=repo1
-  Name:         libvirt
+  Name:         thias-libvirt
   Version:      0.0.1
   Author:       thias
   Dependencies:
@@ -180,7 +180,7 @@ List Modules in a Repository
   Tag List:     rhel, libvirt, kvm, CentOS
   Types:
 
-  Name:         virt
+  Name:         carlasouza-virt
   Version:      1.0.0
   Author:       carlasouza
   Dependencies:
@@ -196,8 +196,8 @@ To be more specific, we can search by name.
 
 ::
 
-  $ pulp-admin puppet repo modules --repo-id=repo1 --str-eq='name=libvirt'
-  Name:         libvirt
+  $ pulp-admin puppet repo modules --repo-id=repo1 --str-eq='name=thias-libvirt'
+  Name:         thias-libvirt
   Version:      0.0.1
   Author:       thias
   Dependencies:
@@ -214,7 +214,7 @@ Or by license, and for fun let's use a regex.
 ::
 
   $ pulp-admin puppet repo modules --repo-id=repo1 --match='license=^GPL.*'
-  Name:         virt
+  Name:         carlasouza-virt
   Version:      1.0.0
   Author:       carlasouza
   Dependencies:
@@ -237,7 +237,7 @@ a result of the above sync.
   $ pulp-admin puppet repo create --repo-id=repo2
   Successfully created repository [repo2]
 
-  $ pulp-admin puppet repo copy --from-repo-id=repo1 --to-repo-id=repo2 --str-eq='name=libvirt'
+  $ pulp-admin puppet repo copy --from-repo-id=repo1 --to-repo-id=repo2 --str-eq='name=thias-libvirt'
   Progress on this task can be viewed using the commands under "repo tasks".
 
   $ pulp-admin repo tasks list --repo-id=repo1

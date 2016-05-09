@@ -80,8 +80,8 @@ class TestGenerateForgeURL(ModuleHandlerTest):
 
 class TestInstall(ModuleHandlerTest):
     UNITS = [
-        {'author': 'puppetlabs', 'name': 'stdlib', 'version': '3.1.1'},
-        {'author': 'puppetlabs', 'name': 'java'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/stdlib', 'version': '3.1.1'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/java'},
     ]
 
     POPEN_OUTPUT = [(
@@ -189,7 +189,7 @@ notice: Installing -- do not interrupt ...
 
 class TestUpdate(ModuleHandlerTest):
     UNITS = [
-        {'author': 'puppetlabs', 'name': 'stdlib'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/stdlib'},
     ]
 
     POPEN_STDOUT = """notice: Preparing to upgrade 'puppetlabs-stdlib' ...
@@ -287,8 +287,8 @@ notice: Upgrading -- do not interrupt ...
 
 class TestUninstall(ModuleHandlerTest):
     UNITS = [
-        {'author': 'puppetlabs', 'name': 'stdlib'},
-        {'author': 'puppetlabs', 'name': 'java'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/stdlib'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/java'},
     ]
 
     # one failed attempt, then two successful attempts
@@ -401,8 +401,8 @@ class TestUninstall(ModuleHandlerTest):
 
 class TestPerformOperation(ModuleHandlerTest):
     UNITS = [
-        {'author': 'puppetlabs', 'name': 'stdlib', 'version': '3.1.1'},
-        {'author': 'puppetlabs', 'name': 'java'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/stdlib', 'version': '3.1.1'},
+        {'author': 'puppetlabs', 'name': 'puppetlabs/java'},
     ]
     POPEN_OUTPUT = [(
 """notice: Preparing to install into /etc/puppet/modules ...

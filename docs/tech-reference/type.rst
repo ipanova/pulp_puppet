@@ -15,8 +15,8 @@ Unit Key
  contributor "Puppet Labs" has the username "puppetlabs".
 
 ``name``
- Module's name only, not including the author section. For the module
- identified as "puppetlabs/stdlib", this field would be "stdlib".
+ Module's name. For the module identified as "puppetlabs/stdlib", this field would be
+ "puppetlabs/stdlib" and it should correspond to name mentioned in the module's metadata.
 
 ``version``
  Module's version, which according to Puppet Labs' documentation, should follow

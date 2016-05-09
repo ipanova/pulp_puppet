@@ -33,7 +33,7 @@ def parse_units(units):
         parts = unit.split('/', 2)
         if len(parts) < 2:
             raise ValueError
-        unit_key = {'author': parts[0], 'name': parts[1]}
+        unit_key = {'name': "/".join((parts[0], parts[1])), 'author': parts[0]}
         if len(parts) == 3:
             unit_key['version'] = parts[2]
         ret.append({'type_id': constants.TYPE_PUPPET_MODULE, 'unit_key': unit_key})

@@ -144,28 +144,6 @@ class Module(FileContentUnit):
         """ Backwards compatible with __repr__ from pulp.plugins.model.AssociatedUnit """
         return str(self)
 
-    @staticmethod
-    def split_filename(filename):
-        """
-        Splits a module's filename into two parts 'author' and 'name' and returns them as a dict.
-
-        Split the filename of a module into into two parts and return it as a dict with the keys
-        'author' and 'name'. The module filenamename is expected to be in the format 'author-name'
-        or 'author/name'.
-
-        :param filename: The module's filename to be split into author and name.
-        :type filename: basestring
-
-        :return: A dictionary with 'author' and 'name' containing the author and name respectively.
-        :rtype: A dict of strings.
-        """
-        try:
-            author, name = filename.split("-", 1)
-        except ValueError:
-            # This is the forge format, but Puppet still allows it
-            author, name = filename.split("/", 1)
-        return {'author': author, 'name': name}
-
     @classmethod
     def from_metadata(cls, metadata):
         """

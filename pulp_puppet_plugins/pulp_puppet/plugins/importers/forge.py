@@ -294,9 +294,6 @@ class SynchronizeWithPuppetForge(object):
             metadata = metadata_module.extract_metadata(downloaded_filename,
                                                          self.repo.working_dir)
 
-            # Overwrite the author and name
-            metadata.update(Module.split_filename(metadata['name']))
-
             # Create and save the Module
             module = Module.from_metadata(metadata)
             module.set_storage_path(os.path.basename(downloaded_filename))

@@ -42,9 +42,6 @@ def handle_uploaded_unit(repo, type_id, unit_key, metadata, file_path, conduit):
     new_file_path = os.path.join(os.path.dirname(file_path), original_filename)
     shutil.move(file_path, new_file_path)
 
-    # Overwrite the author and name
-    extracted_data.update(Module.split_filename(extracted_data['name']))
-
     uploaded_module = Module.from_metadata(extracted_data)
     uploaded_module.set_storage_path(os.path.basename(new_file_path))
     try:

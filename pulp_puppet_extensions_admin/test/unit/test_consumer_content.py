@@ -33,7 +33,7 @@ class TestParseUnits(unittest.TestCase):
         self.assertEqual(unit.get('type_id'), constants.TYPE_PUPPET_MODULE)
         unit_key = unit.get('unit_key', {})
         self.assertEqual(unit_key.get('author'), 'foo')
-        self.assertEqual(unit_key.get('name'), 'bar')
+        self.assertEqual(unit_key.get('name'), 'foo/bar')
         self.assertTrue('version' not in unit_key)
 
     def test_single_unit_with_version(self):
@@ -44,7 +44,7 @@ class TestParseUnits(unittest.TestCase):
         self.assertEqual(unit.get('type_id'), constants.TYPE_PUPPET_MODULE)
         unit_key = unit.get('unit_key', {})
         self.assertEqual(unit_key.get('author'), 'foo')
-        self.assertEqual(unit_key.get('name'), 'bar')
+        self.assertEqual(unit_key.get('name'), 'foo/bar')
         self.assertEqual(unit_key.get('version'), '1.2.3')
 
     def test_units(self):
@@ -55,7 +55,7 @@ class TestParseUnits(unittest.TestCase):
             self.assertEqual(unit.get('type_id'), constants.TYPE_PUPPET_MODULE)
             unit_key = unit.get('unit_key', {})
             self.assertTrue(unit_key.get('author') in ['foo', 'abc'])
-            self.assertTrue(unit_key.get('name') in ['bar', 'xyz'])
+            self.assertTrue(unit_key.get('name') in ['foo/bar', 'abc/xyz'])
             self.assertTrue('version' not in unit_key)
 
 

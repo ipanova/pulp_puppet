@@ -14,7 +14,7 @@ The publish report's ``details`` value has the following format::
      [
        {
          "version": "3.2.0",
-         "name": "stdlib",
+         "name": "puppetlabs/stdlib",
          "author": "puppetlabs"
        },
        "failed to download: not found"
@@ -23,7 +23,7 @@ The publish report's ``details`` value has the following format::
    "success_unit_keys": [
      {
        "version": "4.1.0",
-       "name": "stdlib",
+       "name": "puppetlabs/stdlib",
        "author": "puppetlabs"
      }
    ]

@@ -2,6 +2,21 @@
 Pulp Puppet 2.8 Release Notes
 =============================
 
+Pulp Puppet 2.8.4
+=================
+
+New Behaviours
+--------------
+
+From now on name of the puppet module will correspond to the name specified in its metadata,
+i.e will be in the format of 'name/author' or 'name-author'.
+
+Pulp Puppet 2.8.3
+=================
+
+Due to a Pulp platform release, this plugin's version has been incremented.
+There are no changes from the previous release.
+
 Pulp Puppet 2.8.2
 =================
 
